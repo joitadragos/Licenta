@@ -14,12 +14,11 @@ import com.vaadin.flow.component.textfield.IntegerField;
 import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
-import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import ro.licenta.backend.service.UserService;
 import ro.licenta.backend.user.User;
-import ro.licenta.views.main.MainView;
+import ro.licenta.views.MainView;
 
 @Route(value = "master-detail", layout = MainView.class)
 @RouteAlias(value = "master-details", layout = MainView.class)
@@ -153,13 +152,10 @@ public class MasterDetailView extends Div implements AfterNavigationObserver{
     private void populateForm(User value) {
         // Value can be null as well, that clears the form
 
-        //binder.readBean(value); // commented out
         if ( value == null ) {
             value = new User();
         }
         binder.setBean(value);
 
-        // The password field isn't bound through the binder, so handle that
-        password.setValue("");
     }
 }

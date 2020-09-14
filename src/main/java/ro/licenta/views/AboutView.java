@@ -1,4 +1,4 @@
-package ro.licenta.views.about;
+package ro.licenta.views;
 
 
 import com.vaadin.flow.component.Html;

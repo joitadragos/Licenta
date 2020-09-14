@@ -1,4 +1,4 @@
-package ro.licenta.views.login;
+package ro.licenta.views;
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
@@ -51,7 +51,6 @@ public class LoginView extends VerticalLayout implements BeforeLeaveListener {
         layout.setMaxWidth("500px");
         layout.getStyle().set("margin", "0 auto");
 
-
         usernameTextField = new TextField("username");
         passwordTextField = new PasswordField("Password");
 
@@ -62,8 +61,6 @@ public class LoginView extends VerticalLayout implements BeforeLeaveListener {
         userBinder.bind(usernameTextField, User::getUsername, User::setUsername);
         userBinder.bind(passwordTextField, User::getPassword, User::setPassword);
         userBinder.setBean(user);
-
-
 
         //The register button redirect user to the registration page
         register.addClickListener( e -> getUI().get().navigate("registration"));
@@ -87,7 +84,7 @@ public class LoginView extends VerticalLayout implements BeforeLeaveListener {
 
     private void signIn(User userRequest) {
         if(userAuthenticationDAO.checkAuthentication(userRequest)){
-            getUI().get().navigate("inventory");
+            getUI().get().navigate("notice-view");
             if(userRequest.getUsername().equals("admin")){
                 Notification.show("HAHAHAHAHA");}
             Notification notification = Notification.show("Welcome " + userRequest.getUsername());

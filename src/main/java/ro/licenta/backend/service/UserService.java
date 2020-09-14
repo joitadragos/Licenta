@@ -21,8 +21,6 @@ public class UserService implements Serializable {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    // @Autowired
-    //private PasswordEncoder passwordEncoder;
     String encodedPassword;
     BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
@@ -66,7 +64,14 @@ public class UserService implements Serializable {
             return 0;
         }
     }
-
+    public int saveUser(User user){
+        List<User> users = this.findByUsername(user.getUsername());
+        if(users.size() > 0){
+            return updateUser(user);
+        }else{
+            return insertUser(user);
+        }
+    }
     private int updateUser(User user){
         try{
             return jdbcTemplate.update("UPDATE users SET first_name = ?, last_name = ?, username = ?, email = ? WHERE username = ?",
@@ -76,14 +81,9 @@ public class UserService implements Serializable {
         }
     }
 
-    public int saveUser(User user){
-        List<User> users = this.findByUsername(user.getUsername());
-        if(users.size() > 0){
-            return updateUser(user);
-        }else{
-            return insertUser(user);
-        }
-    }
+
+
+
     public int deleteUser(User user) {
         try {
             return jdbcTemplate.update("DELETE FROM users WHERE username = ?",
@@ -143,10 +143,10 @@ public class UserService implements Serializable {
             return "Firstname can't be shorter than 2 characters";
         }
         if(containsDigit(firstname)==true){
-            return "Name can't have any numbers";
+            return "Firstanme can't have any numbers";
         }
         if(Has_Special(firstname)){
-            return "Name can't have special caracters";
+            return "Firstname can't have special characters";
         }
         return null;
     }
@@ -158,10 +158,10 @@ public class UserService implements Serializable {
             return "Lastname can't be shorter than 2 characters";
         }
         if(containsDigit(lastname)==true){
-            return "Name can't have any numbers";
+            return "Lastname can't have any numbers";
         }
         if(Has_Special(lastname)){
-            return "Name can't have special caracters";
+            return "Lastname can't have special characters";
         }
         return null;
     }
@@ -178,7 +178,7 @@ public class UserService implements Serializable {
             return "Username can't be a number";
         }
         if(Has_Special(username)){
-            return "Username can't have special caracters";
+            return "Username can't have special characters";
         }
 
         List<String> reservedUsernames = Arrays.asList("admin", "test", "null", "void");

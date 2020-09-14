@@ -1,4 +1,4 @@
-package ro.licenta.views.user;
+package ro.licenta.views;
 
 import com.vaadin.flow.component.AbstractField;
 import com.vaadin.flow.component.button.Button;
@@ -10,8 +10,6 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.splitlayout.SplitLayout;
-import com.vaadin.flow.component.textfield.IntegerField;
-import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.router.*;
@@ -19,7 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import ro.licenta.backend.dao.CurrentUser;
 import ro.licenta.backend.service.UserService;
 import ro.licenta.backend.user.User;
-import ro.licenta.views.main.MainView;
+import ro.licenta.views.MainView;
 
 @Route(value = "user-detail", layout = MainView.class)
 @RouteAlias(value = "user-details", layout = MainView.class)

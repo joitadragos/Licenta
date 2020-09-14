@@ -1,9 +1,11 @@
-package ro.licenta.views.main;
+package ro.licenta.views;
 
 import java.util.Arrays;
 import java.util.Optional;
 
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.Key;
+import com.vaadin.flow.component.KeyModifier;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.button.Button;
@@ -33,7 +35,6 @@ import ro.licenta.views.admin.MasterDetailView;
 import ro.licenta.views.notice.NoticeSend;
 import ro.licenta.views.notice.NoticeView;
 import ro.licenta.views.inventory.InventoryView;
-import ro.licenta.views.user.UserDetailView;
 
 /**
  * The main view is a top-level placeholder for other views.
@@ -86,7 +87,8 @@ public class MainView extends AppLayout {
         logoutButton = createMenuButton("Logout", VaadinIcon.SIGN_OUT.create());
         logoutButton.addClickListener(e -> logout());
         logoutButton.getElement().setAttribute("title", "Logout (Ctrl+L)");
-        //logoutButton.addClickShortcut(Key.KEY_L);
+        logoutButton.addClickShortcut(Key.KEY_L, KeyModifier.CONTROL);
+
         layout.add(logoLayout, menu,logoutButton);
         return layout;
     }

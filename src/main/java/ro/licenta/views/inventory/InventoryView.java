@@ -12,7 +12,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.*;
 import ro.licenta.backend.DataService;
 import ro.licenta.backend.data.inventory.Product;
-import ro.licenta.views.main.MainView;
+import ro.licenta.views.MainView;
 
 /**
  * A view for performing create-read-update-delete operations on products.

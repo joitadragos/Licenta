@@ -4,12 +4,11 @@ import com.vaadin.flow.server.ServiceInitEvent;
 import com.vaadin.flow.server.VaadinServiceInitListener;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import ro.licenta.backend.dao.AccessControlFactory;
 import ro.licenta.backend.dao.UserAuthenticationDAO;
-import ro.licenta.views.about.AboutView;
-import ro.licenta.views.login.LoginView;
-import ro.licenta.views.registration.RegistrationView;
+import ro.licenta.views.AboutView;
+import ro.licenta.views.LoginView;
+import ro.licenta.views.RegistrationView;
 /**
  * The entry point of the Spring Boot application.
  */

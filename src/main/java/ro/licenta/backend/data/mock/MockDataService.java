@@ -1,4 +1,4 @@
-package ro.licenta.backend.mock;
+package ro.licenta.backend.data.mock;
 
 
 

@@ -1,4 +1,4 @@
-package ro.licenta.views.registration;
+package ro.licenta.views;
 
 
 import com.vaadin.flow.component.button.Button;
@@ -246,7 +246,7 @@ public class RegistrationView extends VerticalLayout {
             return ValidationResult.error("Password should be at least 8 characters long");
         }
         if(Password_Validation(pass1)==false){
-            return ValidationResult.error("Password should have letters, numbers and special caracters||||1,2,...,9|||@,!,#,$");
+            return ValidationResult.error("Password should have letters, numbers and special characters||||1,2,...,9|||@,!,#,$");
         }
 
 

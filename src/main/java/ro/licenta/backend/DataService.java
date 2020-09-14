@@ -3,7 +3,7 @@ package ro.licenta.backend;
 
 import ro.licenta.backend.data.inventory.Category;
 import ro.licenta.backend.data.inventory.Product;
-import ro.licenta.backend.mock.MockDataService;
+import ro.licenta.backend.data.mock.MockDataService;
 
 import java.io.Serializable;
 import java.util.Collection;

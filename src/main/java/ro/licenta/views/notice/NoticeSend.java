@@ -3,7 +3,6 @@ package ro.licenta.views.notice;
 import com.vaadin.flow.component.AbstractField;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
-import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.GridVariant;
@@ -13,15 +12,12 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.splitlayout.SplitLayout;
 import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.data.binder.BeanValidationBinder;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.router.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import ro.licenta.backend.dao.CurrentUser;
 import ro.licenta.backend.data.Notice;
 import ro.licenta.backend.service.NoticeService;
-import ro.licenta.backend.user.User;
-import ro.licenta.views.main.MainView;
+import ro.licenta.views.MainView;
 
 
 @Route(value = "notice-send", layout = MainView.class)
